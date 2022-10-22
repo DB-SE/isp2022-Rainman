@@ -30,6 +30,7 @@ public class Main {
 
         Graph graph = new Graph(5, edges);
         graph.minimumSpanningTree();
+        graph.depthFirstSearch(graph.getEdges().getFirst().getSource());
     }
 }
 
