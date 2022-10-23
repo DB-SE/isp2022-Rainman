@@ -9,7 +9,8 @@ public class Main {
         Node node2 = new Node("2");
         Node node3 = new Node("3");
         Node node4 = new Node("4");
-        Node node5 = new Node("5");
+        Node node5 = new Node("5s");
+      
 
         Edge edge12 = new Edge(node1, node2, 1);
         Edge edge13 = new Edge(node1, node3, 2);
