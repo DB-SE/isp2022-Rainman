@@ -105,7 +105,7 @@ public class Graph {
     	  }
     	 
     }
-    
+    //find "root"representative of a component
     private int root(int[] parent, int v)
     {
         if(parent[v]==v)
@@ -113,7 +113,7 @@ public class Graph {
         
         return parent[v]=root(parent,parent[v]);
     }
-    
+    //merge components and by replacing one of their root representatives with the other 
     private boolean merge(int[] parent, int v,int u)
     {
         v=root(parent,v);
