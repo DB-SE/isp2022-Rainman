@@ -51,7 +51,7 @@ public class Graph {
     	NumEdge[] g = g_edges.toArray(new NumEdge[0]);
     	//component parent list
     	int parent[] = new int[numberOfNodes];
-    	//number of parent referrals
+    	//index of smallest edge going out of a component
     	int Min[] = new int[numberOfNodes];
     	//initialize parents with identity (every vertex is a component)
     	for(int i=1;i<numberOfNodes;i++)
