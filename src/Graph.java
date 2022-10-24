@@ -54,7 +54,7 @@ public class Graph {
     	//index of smallest edge going out of a component
     	int Min[] = new int[numberOfNodes];
     	//initialize parents with identity (every vertex is a component)
-    	for(int i=1;i<numberOfNodes;i++)
+    	for(int i=0;i<numberOfNodes;i++)
         {
             parent[i]=i; 
         }
@@ -67,11 +67,11 @@ public class Graph {
     	  while(components>1)
     	  {
     	      // Initialize Min for each component as -1.
-    	      for(int i=1;i<numberOfNodes;i++)
+    	      for(int i=0;i<numberOfNodes;i++)
     	      {
     	          Min[i]=-1;
     	      }
-    	      for(int i=1;i<=edges;i++)
+    	      for(int i=0;i<=edges;i++)
     	      {
     	          // If both source and end are from same component we don't process them.
     	          if(root(parent,g[i].d)==root(parent,g[i].s))
@@ -87,7 +87,7 @@ public class Graph {
     	          
     	      }
     	      //collect edges and merge components
-    	      for(int i=1;i<numberOfNodes;i++)
+    	      for(int i=0;i<numberOfNodes;i++)
     	      {
     	          if(Min[i]!=-1)
     	          {
