@@ -1,4 +1,3 @@
-import java.util.Collections;
 import java.util.LinkedList;
 
 public class Main {
@@ -9,7 +8,7 @@ public class Main {
         Node node2 = new Node("2");
         Node node3 = new Node("3");
         Node node4 = new Node("4");
-        Node node5 = new Node("5s");
+        Node node5 = new Node("5");
       
 
         Edge edge12 = new Edge(node1, node2, 1);
@@ -20,7 +19,7 @@ public class Main {
         Edge edge35 = new Edge(node3, node5, 6);
         Edge edge45 = new Edge(node4, node5, 7);
 
-        LinkedList<Edge> edges = new LinkedList<Edge>();
+        LinkedList<Edge> edges = new LinkedList<>();
         edges.add(edge12);
         edges.add(edge13);
         edges.add(edge23);
@@ -29,9 +28,24 @@ public class Main {
         edges.add(edge35);
         edges.add(edge45);
 
-        Graph graph = new Graph(5, edges);
+        boolean weighted = true;
+        boolean labeled = true;
+        boolean directed = true;
+
+
+        IGraph graph = new Graph(5, edges);
+        if (weighted) {
+            graph = new WeightedGraph(graph);
+        }
+        if (labeled) {
+            graph = new LabeledGraph(graph);
+        }
+        if (!directed) {
+            graph = new DirectedGraph(graph);
+        }
+
         graph.minimumSpanningTree();
-        graph.depthFirstSearch(graph.getEdges().getFirst().getSource());
+        graph.depthFirstSearch(node1);
     }
 }
 

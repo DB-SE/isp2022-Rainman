@@ -1,6 +1,4 @@
-import java.util.Collections;
 import java.util.LinkedList;
-import java.awt.List;
 import java.util.ArrayList;
 
 class NumEdge
@@ -16,23 +14,19 @@ class NumEdge
     }
 }
 
-public class Graph {
+public class Graph implements IGraph {
     private int numberOfNodes;
     private LinkedList<Edge> edges;
-    private Node[] nodes;
-    
+
     public Graph(int numberOfNodes, LinkedList<Edge> edges) {
         this.numberOfNodes = numberOfNodes;
         this.edges = edges;
     }
-    
-    public LinkedList<Edge> getEdges() {
-    	return this.edges;
-    } 
 
+	@Override
     public void minimumSpanningTree() {
-        //Collections.sort(edges);
-    	ArrayList<Node> nodes = new ArrayList<Node>(numberOfNodes);
+
+    	ArrayList<Node> nodes = new ArrayList<>(numberOfNodes);
     	//get all vertices in an indexed list as a "cheap" enumeration
     	for (Edge e : edges) {
     		if (!nodes.contains(e.getSource())) {
@@ -75,15 +69,15 @@ public class Graph {
     	      {
     	          // If both source and end are from same component we don't process them.
     	          if(root(parent,g[i].d)==root(parent,g[i].s))
-    	          continue;
+    	          		continue;
     	         
     	          int r_s=root(parent,g[i].s);
     	          if(Min[r_s]==-1 || g[i].w < g[Min[r_s]].w)
-    	          Min[r_s]=i;
+					  Min[r_s]=i;
     	          
     	          int r_d=root(parent,g[i].d);
     	          if(Min[r_d]==-1 || g[i].w < g[Min[r_d]].w)
-    	          Min[r_d]=i;
+					  Min[r_d]=i;
     	          
     	      }
     	      //collect edges and merge components
@@ -109,8 +103,8 @@ public class Graph {
     private int root(int[] parent, int v)
     {
         if(parent[v]==v)
-        return v;
-        
+			return v;
+
         return parent[v]=root(parent,parent[v]);
     }
     //merge components and by replacing one of their root representatives with the other 
@@ -118,14 +112,13 @@ public class Graph {
     {
         v=root(parent,v);
         u=root(parent,u);
-        if(v==u)
-        return false;
+        if (v==u) return false;
         parent[v]=u;
         return true;
     }
-   
-    
-    public void depthFirstSearch(Node start) {
+
+	@Override
+	public void depthFirstSearch(Node start) {
     	ArrayList<Node> nodes = new ArrayList<Node>(numberOfNodes);
     	
     	for (Edge e : edges) {
@@ -159,5 +152,5 @@ public class Graph {
     
     private void visit(Node node) {
     	System.out.printf("%s<", node.getLabel());
-    } 
+    }
 }
