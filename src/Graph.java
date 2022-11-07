@@ -15,7 +15,7 @@ class NumEdge
 }
 
 public class Graph implements IGraph {
-    private int numberOfNodes;
+	private int numberOfNodes;
     private LinkedList<Edge> edges;
 
     public Graph(int numberOfNodes, LinkedList<Edge> edges) {
@@ -95,12 +95,17 @@ public class Graph implements IGraph {
     	  }
     	  System.out.println("Minimum Spanning Tree uses edges:");
     	  for (NumEdge i: ans_MST) {
-    		  System.out.println("("+nodes.get(i.s).getLabel()+","+nodes.get(i.d).getLabel()+") with weight " + i.w);
+    		  mstOutput(i, nodes);
     	  }
     	 
     }
+	@Override
+	public void mstOutput(NumEdge i, ArrayList<Node> nodes) {
+		System.out.println("("+nodes.get(i.s)+","+nodes.get(i.d)+")");
+	}
     //find "root"representative of a component
-    private int root(int[] parent, int v)
+	@Override
+    public int root(int[] parent, int v)
     {
         if(parent[v]==v)
 			return v;
@@ -108,7 +113,8 @@ public class Graph implements IGraph {
         return parent[v]=root(parent,parent[v]);
     }
     //merge components and by replacing one of their root representatives with the other 
-    private boolean merge(int[] parent, int v,int u)
+    @Override
+    public boolean merge(int[] parent, int v,int u)
     {
         v=root(parent,v);
         u=root(parent,u);
@@ -120,7 +126,8 @@ public class Graph implements IGraph {
 	@Override
 	public void depthFirstSearch(Node start) {
     	ArrayList<Node> nodes = new ArrayList<Node>(numberOfNodes);
-    	
+
+    	//find all nodes, since we only have a list of edges, and remember them in a List
     	for (Edge e : edges) {
     		if (!nodes.contains(e.getSource())) {
     			nodes.add(e.getSource());
@@ -130,27 +137,31 @@ public class Graph implements IGraph {
     		}
     	}
     	
+    	//used to remember the nodes that have already been visited;
+    	//index in isVisited corresponds to node with the same index in nodes
     	boolean[] isVisited = new boolean[numberOfNodes];
     	
     	dfsRecursive(nodes, start, isVisited);  	
     	
     }
     
-    private void dfsRecursive(ArrayList<Node> nodes, Node node, boolean[] isVisited) {
+	@Override
+    public void dfsRecursive(ArrayList<Node> nodes, Node node, boolean[] isVisited) {
     	int current = nodes.indexOf(node);
+    	//mark current node as visited
     	isVisited[current] = true;
    		visit(node);
     	
+   		//recursive method call for all nodes that are adjacent to current node and haven't been visited
    		for (Node n : node.getAdjacentNodes()) {
    			if(!isVisited[nodes.indexOf(n)]) {
    				dfsRecursive(nodes, n, isVisited);
    			}
    		}
-   			
-   		
     } 
     
-    private void visit(Node node) {
-    	System.out.printf("%s<", node.getLabel());
+    @Override
+    public void visit(Node node) {
+    	System.out.printf(node + "<");
     }
 }
