@@ -164,4 +164,12 @@ public class Graph implements IGraph {
     public void visit(Node node) {
     	System.out.printf(node + "<");
     }
+    
+    public int getNumberOfNodes() {
+    	return this.numberOfNodes;
+    }
+    
+    public LinkedList<Edge> getEdges() {
+    	return this.edges;
+    }
 }

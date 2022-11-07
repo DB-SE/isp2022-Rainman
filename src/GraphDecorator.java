@@ -1,10 +1,15 @@
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 public abstract class GraphDecorator implements IGraph {
     protected IGraph decoratedGraph;
+    int numberOfNodes;
+  	LinkedList<Edge> edges;
     
     public GraphDecorator(IGraph decoratedGraph) {
         this.decoratedGraph = decoratedGraph;
+        this.numberOfNodes = decoratedGraph.getNumberOfNodes();
+        this.edges = decoratedGraph.getEdges();
     }
     
     public void depthFirstSearch(Node start) {
@@ -33,6 +38,13 @@ public abstract class GraphDecorator implements IGraph {
 
 	public void mstOutput(NumEdge i, ArrayList<Node> nodes) {
 		decoratedGraph.mstOutput(i, nodes);
-		
+	}
+	
+	public int getNumberOfNodes() {
+		return decoratedGraph.getNumberOfNodes();
+	}
+	
+	public LinkedList<Edge> getEdges() {
+		return decoratedGraph.getEdges();
 	}
 }

@@ -8,6 +8,7 @@ public class Node {
     public Node(String label) {
         this.label = label;
         this.adjacentNodes = new ArrayList<Node>();
+        this.destinationNodes = new ArrayList<Node>();
     }
     
     public String getLabel() {

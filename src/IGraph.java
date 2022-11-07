@@ -2,8 +2,6 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 public interface IGraph {
-	int numberOfNodes = 0;
-	LinkedList<Edge> edges = null;
 	
 	void depthFirstSearch(Node start);
     void minimumSpanningTree();
@@ -12,4 +10,6 @@ public interface IGraph {
     int root(int[] parent, int v);
     boolean merge(int[] parent, int v,int u);
     void mstOutput(NumEdge i, ArrayList<Node> nodes);
+	LinkedList<Edge> getEdges();
+	int getNumberOfNodes();
 }
