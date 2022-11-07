@@ -15,8 +15,8 @@ class NumEdge
 }
 
 public class Graph implements IGraph {
-	private int numberOfNodes;
-    private LinkedList<Edge> edges;
+	private final int numberOfNodes;
+    private final LinkedList<Edge> edges;
 
     public Graph(int numberOfNodes, LinkedList<Edge> edges) {
         this.numberOfNodes = numberOfNodes;

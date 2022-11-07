@@ -12,7 +12,7 @@ public class DirectedGraph extends GraphDecorator {
     
     @Override
 	public void depthFirstSearch(Node start) {
-    	ArrayList<Node> nodes = new ArrayList<Node>(numberOfNodes);
+    	ArrayList<Node> nodes = new ArrayList<>(numberOfNodes);
 
     	//find all nodes, since we only have a list of edges, and remember them in a List
     	for (Edge e : edges) {

@@ -27,9 +27,9 @@ public class WeightedGraph extends GraphDecorator {
     	}
     	NumEdge[] g = g_edges.toArray(new NumEdge[0]);
     	//component parent list
-    	int parent[] = new int[numberOfNodes];
+    	int[] parent = new int[numberOfNodes];
     	//index of smallest edge going out of a component
-    	int Min[] = new int[numberOfNodes];
+    	int[] Min = new int[numberOfNodes];
     	//initialize parents with identity (every vertex is a component)
     	for(int i=0;i<numberOfNodes;i++)
         {

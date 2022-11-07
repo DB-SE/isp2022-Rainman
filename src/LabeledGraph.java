@@ -14,7 +14,5 @@ public class LabeledGraph extends GraphDecorator{
 	@Override
     public void mstOutput(NumEdge i, ArrayList<Node> nodes) {
     		  System.out.println("("+nodes.get(i.s).getLabel()+","+nodes.get(i.d).getLabel()+")");
-    	 
     }
-
 }

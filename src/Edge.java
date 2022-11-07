@@ -1,7 +1,7 @@
 public class Edge implements Comparable<Edge> {
-    private Node source;
-    private Node destination;
-    private int weight;
+    private final Node source;
+    private final Node destination;
+    private final int weight;
 
     public Edge(Node source, Node destination, int weight) {
         this.source = source;

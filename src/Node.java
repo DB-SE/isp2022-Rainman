@@ -1,14 +1,14 @@
 import java.util.ArrayList;
 
 public class Node {
-    private String label;
-    private ArrayList<Node> adjacentNodes;
-    private ArrayList<Node> destinationNodes;
+    private final String label;
+    private final ArrayList<Node> adjacentNodes;
+    private final ArrayList<Node> destinationNodes;
 
     public Node(String label) {
         this.label = label;
-        this.adjacentNodes = new ArrayList<Node>();
-        this.destinationNodes = new ArrayList<Node>();
+        this.adjacentNodes = new ArrayList<>();
+        this.destinationNodes = new ArrayList<>();
     }
     
     public String getLabel() {
