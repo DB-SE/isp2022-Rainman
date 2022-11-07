@@ -24,6 +24,11 @@ public class DirectedGraph extends GraphDecorator {
     		}
     	}
     	
+    	//find all outgoing Edges
+    	for (Edge e : edges) {
+    		e.getSource().addDestinationNode(e.getDestination());
+    	}
+    	
     	//used to remember the nodes that have already been visited;
     	//index in isVisited corresponds to node with the same index in nodes
     	boolean[] isVisited = new boolean[numberOfNodes];
@@ -40,8 +45,8 @@ public class DirectedGraph extends GraphDecorator {
    		visit(node);
     	
    		//recursive method call for all nodes that are adjacent to current node and haven't been visited
-   		for (Node n : node.getAdjacentNodes()) {
-   			if(!isVisited[nodes.indexOf(n)] && ) {
+   		for (Node n : node.getDestinationNodes()) {
+   			if(!isVisited[nodes.indexOf(n)]){
    				dfsRecursive(nodes, n, isVisited);
    			}
    		}
