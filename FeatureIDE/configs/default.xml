@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+	<feature automatic="selected" name="isp2022Rainman"/>
+	<feature automatic="selected" name="Graph"/>
+	<feature automatic="selected" name="Edges"/>
+	<feature automatic="selected" name="Algorithms"/>
+	<feature manual="selected" name="DFS"/>
+	<feature manual="selected" name="MST"/>
+	<feature manual="selected" name="Adjacency_Matrix"/>
+	<feature automatic="selected" name="Nodes"/>
+	<feature name="Color"/>
+	<feature automatic="selected" name="Weighted"/>
+	<feature automatic="unselected" name="Directed"/>
+	<feature name="Labeled"/>
+</configuration>
