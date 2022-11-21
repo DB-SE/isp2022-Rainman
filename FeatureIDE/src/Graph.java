@@ -163,7 +163,9 @@ public class Graph implements IGraph {
     	
     	for (Edge e : edges) {
     		adjmat[nodes.indexOf(e.getSource())][nodes.indexOf(e.getDestination())] = true;
+		// #ifndef directed
     		adjmat[nodes.indexOf(e.getDestination())][nodes.indexOf(e.getSource())] = true;
+		// #endif
     	}
     	return adjmat;
     }
