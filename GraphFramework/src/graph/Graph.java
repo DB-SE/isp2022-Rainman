@@ -1,6 +1,7 @@
 package graph;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 import interfaces.EdgePlugin;
 import interfaces.NodePlugin;
@@ -123,10 +124,14 @@ public class Graph {
     }
     	
 	public void depthFirstSearch() {
+
+    	System.out.printf("DFS: ");
 		for (EdgePlugin edgePlugin: edgePlugins) {
 			edgePlugin.setGraph(this);
 			edgePlugin.depthFirstSearch();
+			System.out.printf("\n");
 		}	
+		System.out.printf("\n");
     }
 	
 	public void baseDepthFirstSearch() {
@@ -160,11 +165,31 @@ public class Graph {
     }
     
     public void breadthFirstSearch() {
-    	// TODO: ...
+    	System.out.printf("BFS: ");
+    	boolean[] isVisited = new boolean[numberOfNodes];
+		baseBreadthFirstSearch(nodes, nodes.get(0), isVisited); 
+		System.out.printf("\n");
     }
     
-	public void baseBreadthFirstSearch() {
-    	// TODO: ... 
+	public void baseBreadthFirstSearch(ArrayList<Node> nodes, Node start, boolean[] isVisited) {
+    	Queue<Node> queue = new LinkedList<>();
+    	boolean[] queued = new boolean[numberOfNodes];
+    	queue.add(start);
+    	queued[nodes.indexOf(start)] = true;
+    	while(!queue.isEmpty()) {
+    		Node cur = queue.remove();
+    		int current = nodes.indexOf(cur);
+        	if(!isVisited[current]) {
+    		isVisited[current] = true;
+        	visit(cur);
+        	for(Node i: cur.getAdjacentNodes()) {
+        		if(!isVisited[nodes.indexOf(i)]&&!queued[nodes.indexOf(i)]) {
+        			queue.add(i);
+        			queued[nodes.indexOf(i)] = true;
+        		}
+        	}}
+    		
+    	}
 	}
     
     
