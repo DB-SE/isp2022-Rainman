@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="autolayoutconstraints" value="false"/>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showconstraints" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="isp2022Rainman">
+			<and mandatory="true" name="Graph">
+				<and mandatory="true" name="Edges">
+					<graphics key="collapsed" value="false"/>
+					<feature name="Directed"/>
+					<feature name="Weighted"/>
+				</and>
+				<or abstract="true" name="Algorithms">
+					<feature name="DFS"/>
+					<feature name="BFS"/>
+					<feature name="MST"/>
+					<feature name="Adjacency_Matrix"/>
+				</or>
+				<and mandatory="true" name="Nodes">
+					<feature name="Color"/>
+					<feature name="Labeled"/>
+				</and>
+			</and>
+		</and>
+	</struct>
+	<constraints>
+		<rule>
+			<imp>
+				<var>MST</var>
+				<not>
+					<var>Directed</var>
+				</not>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>MST</var>
+				<var>Weighted</var>
+			</imp>
+		</rule>
+	</constraints>
+</featureModel>
