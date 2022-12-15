@@ -3,13 +3,13 @@
 	<feature automatic="selected" name="isp2022Rainman"/>
 	<feature automatic="selected" name="Graph"/>
 	<feature automatic="selected" name="Edges"/>
-	<feature automatic="unselected" name="Directed"/>
-	<feature automatic="selected" name="Weighted"/>
+	<feature manual="selected" name="Directed"/>
+	<feature manual="selected" name="Weighted"/>
 	<feature automatic="selected" name="Algorithms"/>
 	<feature manual="selected" name="DFS"/>
-	<feature name="BFS"/>
+	<feature manual="selected" name="BFS"/>
 	<feature manual="selected" name="MST"/>
-	<feature name="Adjacency_Matrix"/>
+	<feature manual="selected" name="Adjacency_Matrix"/>
 	<feature automatic="selected" name="Nodes"/>
 	<feature manual="selected" name="Color"/>
 	<feature manual="selected" name="Labeled"/>

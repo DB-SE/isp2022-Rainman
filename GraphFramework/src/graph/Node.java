@@ -4,27 +4,24 @@ import java.util.ArrayList;
 
 public class Node {
     private final String label;
+    private final Color color;
     private final ArrayList<Node> adjacentNodes;
     private final ArrayList<Node> destinationNodes;
 
-    private Color color;
-    
-    public Color getColor() {
-    	return this.color;
-    }
-    
-    public void setColor(Color color) {    
-    	this.color = color;
-    }
-
-    public Node(String label) {
+    public Node(String label, Color color) {
         this.label = label;
+        this.color = color;
+        
         this.adjacentNodes = new ArrayList<>();
         this.destinationNodes = new ArrayList<>();
     }
     
     public String getLabel() {
     	return this.label;
+    }
+    
+    public Color getColor() {
+    	return this.color;
     }
     
     public ArrayList<Node> getAdjacentNodes() {

@@ -31,20 +31,4 @@
 			</and>
 		</and>
 	</struct>
-	<constraints>
-		<rule>
-			<imp>
-				<var>MST</var>
-				<not>
-					<var>Directed</var>
-				</not>
-			</imp>
-		</rule>
-		<rule>
-			<imp>
-				<var>MST</var>
-				<var>Weighted</var>
-			</imp>
-		</rule>
-	</constraints>
 </featureModel>
