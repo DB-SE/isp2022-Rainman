@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+	<feature automatic="selected" name="FOPGraphFramework"/>
+	<feature automatic="selected" name="Graph"/>
+	<feature automatic="selected" name="Edges"/>
+	<feature manual="selected" name="Directed"/>
+	<feature manual="selected" name="Weighted"/>
+	<feature automatic="selected" manual="selected" name="Algorithms"/>
+	<feature manual="selected" name="DFS"/>
+	<feature manual="selected" name="BFS"/>
+	<feature automatic="unselected" name="MST"/>
+	<feature automatic="selected" manual="selected" name="Adjacency_Matrix"/>
+	<feature automatic="selected" name="Nodes"/>
+	<feature manual="selected" name="Color"/>
+	<feature manual="selected" name="Labeled"/>
+</configuration>

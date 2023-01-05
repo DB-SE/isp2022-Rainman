@@ -1,0 +1,24 @@
+
+public class Node {
+	private String label;
+	
+	public Node(String label) {
+		this.label = label;
+	}
+	
+	public void setLabel(String label) {
+		this.label = label;
+	}
+	
+	public String getLabel() {
+		return this.label;
+	}
+	
+	void print() {
+		System.out.print(label);
+	}
+	
+	public String toString() {
+		return this.label;
+	}
+}
